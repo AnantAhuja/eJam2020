@@ -3,7 +3,7 @@ extends KinematicBody2D
 export (int) var speed = 50
 
 var velocity = Vector2()
-var facing = 'up'
+var facing = 'down'
 var idle_dict = {'left': 'idle_left', 'right': 'idle_right', 'up': 'idle_up', 'down': 'idle_down'}
 onready var sprite = $AnimatedSprite
 
