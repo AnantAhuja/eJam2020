@@ -22,7 +22,7 @@
   },
   "post_loop_2": {
     "type": "text",
-    "content": "How much of that punch did you have?",
+    "content": "How much of that punch did you have?"
   },
   "second": {
     "type": "question",
@@ -94,6 +94,18 @@
   },
   "final_dialogue": {
     "type": "text",
-    "content": "Delicious, finally some good food! Thanks"
+    "content": "Delicious, finally some good food! Thanks",
+    "next": "fulfil"
+  },
+  "fulfil": {
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "value": [
+      [
+        "is_jonah_fulfilled",
+        true
+      ]
+    ]
   }
 }

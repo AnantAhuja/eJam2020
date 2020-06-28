@@ -1,0 +1,23 @@
+﻿{
+  "first": {
+    "type": "text",
+    "content": "Alright, I think I’ve fixed it. It looks like the power was turned up to 11, somehow. That thing could have sucked you right up!",
+    "next": "branch_1"
+  },
+  "branch_1": {
+    "type": "text",
+    "content": "Thanks Lee, now please go enjoy the party.",
+    "next": "fulfil"
+  },
+  "fulfil": {
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "value": [
+      [
+        "is_lee_fulfilled",
+        true
+      ]
+    ]
+  }
+}

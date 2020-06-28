@@ -5,7 +5,7 @@ const indoors = preload('res://Indoors.tscn')
 const upstairs = preload('res://Upstairs.tscn')
 const store = preload("res://Store.tscn")
 const PLAYER = preload("res://Player/Player.tscn")
-onready var dialogue = $Dialogue
+# onready var dialogue = $Dialogue
 var dialogues = { # Everytime the player talks with an NPC it will be stored here so the system use the "repeat" block (if available) on the next interaction.
 #	'question': true # This is here just for demonstration (and debugging) pourposes.
 }
@@ -30,8 +30,8 @@ func go_downstairs():
 func go_to_store():
 	if variables['store_open']:
 		get_tree().change_scene_to(store)
-	else:
-		dialogue.initiate('main_door')
+#	else:
+#		dialogue.initiate('main_door')
 
 func go_back_home():
 	get_tree().change_scene_to(indoors)

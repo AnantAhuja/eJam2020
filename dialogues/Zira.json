@@ -18,7 +18,8 @@
   "end_dialog": 
   {
     "type": "text",
-    "content": "Oh wow, that was quick. Thanks for cleaning my shirt and for lending me yours in the meantime. Enjoy your party!"
+    "content": "Oh wow, that was quick. Thanks for cleaning my shirt and for lending me yours in the meantime. Enjoy your party!",
+    "next": "fulfil"
   },
   "shirt_check_post": {
     "type": "divert",
@@ -127,17 +128,15 @@
     ],
     "next": "branch_1"
   },
-
-  "branch_": {
-    "type": "question",
-    "text": "",
-    "options": [
-      "",
-      ""
-    ],
-    "next": [
-      "",
-      ""
+  "fulfil": {
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "value": [
+      [
+        "is_zira_fulfilled",
+        true
+      ]
     ]
   }
 }
