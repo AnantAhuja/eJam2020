@@ -1,0 +1,143 @@
+﻿{
+  "first": {
+    "type": "divert",
+    "condition": "boolean",
+    "dictionary": "variables",
+    "variable": "first_loop",
+    "true": "post_loop_1",
+    "false": "second"
+  },
+  "post_loop_1": {
+    "type": "text",
+    "content": "Hey, Frank, I think I’m stuck in a time loop…",
+    "next": "post_loop_2"
+  },
+  "post_loop_2": {
+    "type": "text",
+    "content": "As an extremely intelligent budding scientist, I’d say the only way out of the time loop would be to put this can of body spray into the microwave",
+    "next": "give_body_spray"
+  },
+  "second": {
+    "type": "question",
+    "text": "Nice party you have here…",
+    "options": [
+      "It'd be nicer if you weren't here.",
+      "Thanks, I'm glad you could come."
+    ],
+    "next": [
+      "",
+      "branch_1"
+    ]
+  },
+  "second2": {
+    "type": "question",
+    "text": "Anyways, nice party you have here.",
+    "options": [
+      "It'd be nicer if you weren't here.",
+      "Thanks, I'm glad you could come."
+    ],
+    "next": [
+      "",
+      "branch_1"
+    ]
+  },
+  "branch_1": {
+    "type": "question",
+    "text": "I guess I’m glad too, despite the fact that we broke up two weeks ago. Doesn’t make this situation awkward at all…",
+    "options": [
+      "Breaking up with you was the best decision I’ve ever made.",
+      "Sarcasm doesn’t really help make it any less awkward, Frank."
+    ],
+    "next": [
+      "",
+      "branch_2"
+    ]
+  },
+  "branch_2": {
+    "type": "question",
+    "text": "Well, I guess it’s a good thing we broke up then. You don’t like my sarcasm, and I don’t like the fact that you never think of other people.",
+    "options": [
+      "You really didn’t have to insult me at my birthday party. I’m done with you.",
+      "At least we can still be friends though, right?"
+    ],
+    "next": [
+      "",
+      "branch_3"
+    ]
+  },
+  "branch_3": {
+    "type": "question",
+    "text": "Yeah, we’re still friends. I think this was a healthy choice anyway. I’ve been able to think a lot more about pursuing my dreams.",
+    "options": [
+      "Dreams? What dreams? The only dreams you had were the ones you saw when you were asleep.",
+      "Good for you."
+    ],
+    "next": [
+      "branch_4",
+      "branch_5"
+    ]
+  },
+  "branch_4": {
+    "type": "text",
+    "content": "I want to be the next Thomas Franklin or Ben Edison! I’m going to make a name for myself!",
+    "next": "branch_4_response"
+  },
+  "branch_4_response": {
+    "type": "text",
+    "content": "Ok….",
+    "next": "branch_5"
+  },
+  "branch_5": {
+    "type": "question",
+    "text": "Do you think I should pursue my dreams even if it means I might get hurt along the way? No risk without some reward! Wait, did I say that wrong?",
+    "options": [
+      "You’re an idiot.",
+      "Follow your dreams if they’re important to you. No matter what.",
+      "You should follow your dreams, Frank, but don’t put yourself at any risk. Make safe choices."
+    ],
+    "next": [
+      "",
+      "engage_stupidity",
+      "fulfil"
+    ]
+  },
+  "engage_stupidity": {
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "value": [
+      [
+        "commence_franks_stupidity",
+        true
+      ]
+    ]
+  },
+  "fulfil": {
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "value": [
+      [
+        "is_frank_fulfilled",
+        true
+      ]
+    ],
+    "next": "final"
+  },
+  "give_body_spray": {
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "value": [
+      [
+        "has_body_spray",
+        true
+      ]
+    ],
+    "next": "second2"
+  },
+  "final ": {
+    "type": "text",
+    "content": "I guess you’re right… I’ll be safe."
+  }
+}

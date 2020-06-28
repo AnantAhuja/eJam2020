@@ -1,0 +1,109 @@
+{
+  "first": {
+    "type": "divert",
+    "condition": "boolean",
+    "dictionary": "variables",
+    "variable": "first_loop",
+    "true": "post_loop_1",
+    "false": "second"
+  },
+  "post_loop_1": {
+    "type": "text",
+    "content": "Hey, Jonah, I think I'm stuck in a time loop…",
+    "next": "post_loop_2"
+  },
+  "post_loop_2": {
+    "type": "text",
+    "content": "How much of that punch did you have?",
+    "next": "second2"
+  },
+  "second": {
+    "type": "question",
+    "text": "I'm surprised you're talking to me. Are you sure you wouldn't rather be talking to Mary or Zira?",
+    "options": [
+      "You know what? You're right.",
+      "I know we aren't on the best of terms anymore Jonah, but I want everyone to have a good time tonight"
+    ],
+    "next": [
+      "",
+      "chose_option_2"
+    ]
+  },
+  "second2": {
+    "type": "text",
+    "content": "...",
+    "next": "second3"
+  },
+  "second3": {
+    "type": "question",
+    "text": "I'm still surprised you're talking to me. Are you sure you wouldn't rather be talking to Mary or Zira?",
+    "options": [
+      "You know what? You're right.",
+      "I know we aren't on the best of terms anymore Jonah, but I want everyone to have a good time tonight"
+    ],
+    "next": [
+      "",
+      "chose_option_2"
+    ]
+  },
+  "chose_option_2": {
+    "type": "question",
+    "text": "If you really wanted me to have a good time, then you would have at least remembered my dietary restrictions",
+    "options": [
+      "If you really wanted ME to have a good time, then you wouldn't be complaining at my birthday party.",
+      "I'm sorry, can you remind me what your dietary restrictions are?"
+    ],
+    "next": [
+      "",
+      "chose_path_2"
+    ]
+  },
+  "chose_path_2": {
+    "type": "question",
+    "text": "I will only eat asparagus, or things that have asparagus in them.",
+    "options": [
+      "You're kidding, right? Is that actually a dietary restriction or are you just being ridiculously picky?",
+      "Oh, I can't believe I forgot! I'll see if I can go to the store to pick some asparagus up for you!"
+    ],
+    "next": [
+      "chose_fork_1",
+      "set_store_open"
+    ]
+  },
+  "chose_fork_1": {
+    "type": "question",
+    "text": "I… really like asparagus… Ok?",
+    "options": [
+      "You're ridiculous",
+      "Ok… I'll go to the store and get you some, I guess."
+    ],
+    "next": [
+      "",
+      "set_store_open"
+    ]
+  },
+  "set_store_open": {
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "value": [
+      [
+        "store_open",
+        true
+      ]
+    ],
+    "next": "final_check"
+  },
+  "final_check": {
+    "type": "divert",
+    "condition": "boolean",
+    "dictionary": "variables",
+    "variable": "got_asparagus",
+    "true": "final_dialogue",
+    "false": ""
+  },
+  "final_dialogue": {
+    "type": "text",
+    "content": "Delicious, finally some good food! Thanks"
+  }
+}

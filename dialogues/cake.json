@@ -1,0 +1,18 @@
+{
+  "first": {
+    "type": "divert",
+    "condition": "boolean",
+    "dictionary": "variables",
+    "variable": "talked_to_mary",
+    "true": "second",
+    "false": "alone"
+  },
+  "alone": {
+    "type": "text",
+    "content": "I don't want to eat my birthday cake all by myself like some fat loner."
+  },
+  "second": {
+    "type": "text",
+    "content": "Mmm, this is really good! But I’m definitely having an allergic reaction to something"
+  }
+}
