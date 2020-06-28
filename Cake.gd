@@ -10,7 +10,7 @@ func interact():
 	dialogue.initiate('cake')
 	if progress.variables['has_epipen']:
 		# Alive
-		pass
+		dialogue.initiate('cake_2')
 	else:
 		# Death scene
-		pass
+		progress.variables['first_loop'] = true

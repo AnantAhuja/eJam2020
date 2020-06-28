@@ -1,0 +1,143 @@
+﻿{
+  "first": {
+    "type": "divert",
+    "condition": "boolean",
+    "dictionary": "variables",
+    "variable": "has_ziras_clean_shirt",
+    "true": "shirt_check_post",
+    "false": "post_check"
+  },
+  "post_check": {
+    "type": "divert",
+    "condition": "boolean",
+    "dictionary": "variables",
+    "variable": "first_loop",
+    "true": "end_dialog",
+    "false": "shirt_check"
+  },
+  "end_dialog": 
+  {
+    "type": "text",
+    "content": "Oh wow, that was quick. Thanks for cleaning my shirt and for lending me yours in the meantime. Enjoy your party!"
+  },
+  "shirt_check_post": {
+    "type": "divert",
+    "condition": "boolean",
+    "dictionary": "variables",
+    "variable": "has_shirt",
+    "true": "post_loop_1_with_shirt",
+    "false": "post_loop_1"
+  },
+  "shirt_check": {
+    "type": "divert",
+    "condition": "boolean",
+    "dictionary": "variables",
+    "variable": "has_shirt",
+    "true": "second_with_shirt",
+    "false": "second"
+  },
+  "post_loop_1": {
+    "type": "question",
+    "text": "Oh, hey. Sorry, I’m a mess right now. I spilled some punch on my shirt and now I don’t know what to do!",
+    "options": [
+      "I’d say it’s an improvement. It distracts from your face.",
+      "Oh, gosh. I’m not sure what to do! I’ll see if I have an extra shirt lying around in one of my drawers.",
+      "Hey, Zira, I think I’m stuck in a time loop…"
+    ],
+    "next": [
+      "branch_1",
+      "",
+      "post_loop_2"
+    ]
+  },
+  "post_loop_1_with_shirt": {
+    "type": "question",
+    "text": "Oh, hey. Sorry, I’m a mess right now. I spilled some punch on my shirt and now I don’t know what to do!",
+    "options": [
+      "I’d say it’s an improvement. It distracts from your face.",
+      "Here you go Zira, I found this extra shirt in my room.",
+      "Hey, Zira, I think I’m stuck in a time loop…"
+    ],
+    "next": [
+      "branch_1",
+      "zira_changed_flag",
+      "post_loop_2"
+    ]
+  },
+  "post_loop_2": {
+    "type": "text",
+    "content": "And I’m George Washington! Making jokes with friends is fun!"
+  },
+  "second": {
+    "type": "question",
+    "text": "Oh, hey. Sorry, I’m a mess right now. I spilled some punch on my shirt and now I don’t know what to do!",
+    "options": [
+      "I’d say it’s an improvement. It distracts from your face.",
+      "Oh, gosh. I’m not sure what to do! I’ll see if I have an extra shirt lying around in one of my drawers."
+    ],
+    "next": [
+      "shirt_check",
+      ""
+    ]
+  },
+  "second_with_shirt": {
+    "type": "question",
+    "text": "Oh, hey. Sorry, I’m a mess right now. I spilled some punch on my shirt and now I don’t know what to do!",
+    "options": [
+      "I’d say it’s an improvement. It distracts from your face.",
+      "Here you go Zira, I found this extra shirt in my room."
+    ],
+    "next": [
+      "shirt_check",
+      "zira_changed_flag"
+    ]
+  },
+  "branch_1": {
+    "type": "question",
+    "text": "Thanks! Would you mind throwing my dirty shirt in the washing machine?",
+    "options": [
+      "What do I look like, your maid?",
+      "Sure thing Zira, go enjoy the party while I deal with it!"
+    ],
+    "next": [
+      "",
+      "set_dirty_flag"
+    ]
+  },
+  "set_dirty_flag": {
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "value": [
+      [
+        "has_dirty_shirt",
+        true
+      ]
+    ]
+  },
+  "zira_changed_flag": {
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "value": [
+      [
+        "zira_changed",
+        true
+      ]
+    ],
+    "next": "branch_1"
+  },
+
+  "branch_": {
+    "type": "question",
+    "text": "",
+    "options": [
+      "",
+      ""
+    ],
+    "next": [
+      "",
+      ""
+    ]
+  }
+}

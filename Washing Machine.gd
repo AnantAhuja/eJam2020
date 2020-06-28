@@ -7,3 +7,4 @@ func _ready():
 
 func interact():
 	dialogue.initiate('washing_machine')
+	Progress.variables['has_seen_Washing_machine'] = true

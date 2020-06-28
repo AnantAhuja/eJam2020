@@ -1,0 +1,82 @@
+﻿{
+  "first": {
+    "type": "divert",
+    "condition": "boolean",
+    "dictionary": "variables",
+    "variable": "first_loop",
+    "true": "post_loop_1",
+    "false": "second"
+  },
+  "post_loop_1": {
+    "type": "question",
+    "text": "Hey! Finally, someone shows up! I’ve been sitting here, bored and lonely, for the last few hours.",
+    "options": [
+      "Well, I’m really sorry about that Akari. Hopefully things will turn around for you soon. Here’s that money for the asparagus.",
+      "Alright, no one wants to spend time with you anyway.",
+      "Hey, Akari, I think I’m stuck in a time loop…"
+    ],
+    "next": [
+      "branch_1",
+      "set_asparagus_flag",
+      "post_loop_2"
+    ]
+  },
+  "post_loop_2": {
+    "type": "text",
+    "content": "And I’m George Washington! Making jokes with friends is fun!"
+  },
+  "second": {
+    "type": "question",
+    "text": "Hey! Finally, someone shows up! I’ve been sitting here, bored and lonely, for the last few hours.",
+    "options": [
+      "Well, I’m really sorry about that Akari. Hopefully things will turn around for you soon. Here’s that money for the asparagus.",
+      "Alright, no one wants to spend time with you anyway."
+    ],
+    "next": [
+      "branch_1",
+      "set_asparagus_flag"
+    ]
+  },
+  "branch_1":
+  {
+    "type": "question",
+    "text": "Thanks, I hope so too. Happy birthday, by the way! I can hear the party raging next door. It sounds like you’re all having a great time together.",
+    "options": [
+      "We certainly are! Luckily you’re not there to ruin it.",
+      "Thanks Akari! If you don’t mind closing the shop up for a little bit you’re welcome to join us at the party. We’d love to have you!"
+    ],
+    "next": [
+      "set_asparagus_flag",
+      "branch_2"
+    ]
+  },
+  "branch_2":
+  {
+    "type": "text",
+    "content": "Really? Awesome! I’ll be there in just a few minutes, I’ve got to do a few things before I can close the shop up.",
+    "next": "set_akari_flag"
+  },
+  "set_akari_flag": {
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "value": [
+      [
+        "akari_at_party",
+        true
+      ]
+    ],
+    "next": "set_asparagus_flag"
+  },
+  "set_asparagus_flag": {
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "value": [
+      [
+        "got_asparagus",
+        true
+      ]
+    ]
+  }
+}

@@ -219,7 +219,6 @@ func first(block):
 	else: # We are going to use a custom first block
 		update_dialogue(dialogue[block])
 
-
 func update_dialogue(step): # step == whole dialogue block
 	clean()
 	current = step

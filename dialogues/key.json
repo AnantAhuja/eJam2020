@@ -1,0 +1,18 @@
+﻿{
+  "first": {
+    "type": "text",
+    "content": "Oooh a key. Whose could it be?"
+    "next": "set_key_flag"
+  }
+  "set_key_flag": {
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "value": [
+      [
+        "got_key",
+        true
+      ]
+    ]
+  },
+}

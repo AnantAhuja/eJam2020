@@ -13,6 +13,8 @@ func interact():
 		dialogue.initiate('microwave')
 
 func explode():
+	$'../Music'.stop()
+	
 	$Sprite.hide()
 	$'../Player'.hide()
 	$AnimatedSprite.show()
@@ -20,3 +22,5 @@ func explode():
 	
 func _on_AnimatedSprite_animation_finished():
 	self.hide()
+	progress.variables['first_loop'] = true
+	

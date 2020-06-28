@@ -1,0 +1,88 @@
+﻿{
+  "first": {
+    "type": "divert",
+    "condition": "boolean",
+    "dictionary": "variables",
+    "variable": "has_seen_washing_machine",
+    "true": "branch_4",
+    "false": "post_check"
+  },
+  "post_check": {
+    "type": "divert",
+    "condition": "boolean",
+    "dictionary": "variables",
+    "variable": "has_seen_washing_machine",
+    "true": "post_loop_1",
+    "false": "second"
+  },
+  "post_loop_1": {
+    "type": "question",
+    "text": "Oh, hey. Don’t mind me. I’m just taking a look at this table leg.",
+    "options": [
+      "Good, you’re finally doing something useful with your life.",
+      "Lee, you’re at a party. Try to enjoy yourself.",
+      "Hey, Lee, I think I’m stuck in a time loop…"
+    ],
+    "next": [
+      "branch_1",
+      "post_loop_2",
+      ""
+    ]
+  },
+  "post_loop_2": {
+    "type": "text",
+    "content": "It sounds like you’ve imagined up a problem even I can’t fix!"
+  },
+  "second": {
+    "type": "question",
+    "text": "Oh, hey. Don’t mind me. I’m just taking a look at this table leg.",
+    "options": [
+      "Good, you’re finally doing something useful with your life.",
+      "Lee, you’re at a party. Try to enjoy yourself."
+    ],
+    "next": [
+      "branch_1",
+      ""
+    ]
+  },
+  "branch_1": {
+    "type": "question",
+    "text": "I’ll enjoy myself once I actually make myself useful.",
+    "options": [
+      "You’re never going to be useful.",
+      "Well there’s nothing wrong with this table."
+    ],
+    "next": [
+      "",
+      "branch_2"
+    ]
+  },
+  "branch_2": {
+    "type": "question",
+    "text": "Are you sure? I could just keep looking maybe…",
+    "options": [
+      "Keep looking, maybe you’ll find something if you stare at it for an hour.",
+      "Yes, Lee, I’m sure. Please just try to enjoy yourself."
+    ],
+    "next": [
+      "",
+      "branch_3"
+    ]
+  },
+  "branch_3": 
+  {
+    "type": "text",
+    "content": "Ok… ok… I’ll try to enjoy myself"
+  },
+  "branch_4": 
+  {
+    "type": "text",
+    "content": "Actually, the washing machine upstairs is acting strangely. I think it might still work, but maybe you can give it a look?",
+    "next": "branch_5"
+  },
+  "branch_5": 
+  {
+    "type": "text",
+    "content": "I’ll get right on that!"
+  }
+}

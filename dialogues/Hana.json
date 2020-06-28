@@ -37,8 +37,7 @@
       "branch_1"
     ]
   },
-  "branch_1":
-  {
+  "branch_1": {
     "type": "question",
     "text": "I wanted to be alone. I-I-I’m alright. Don’t worry about me.",
     "options": [
@@ -50,12 +49,11 @@
       "branch_2"
     ]
   },
-  "branch_2":
-  {
+  "branch_2": {
     "type": "question",
     "text": "Really?",
     "options": [
-      "Sure, come along with me for a while!",
+      "Sure, you should come downstairs for some time",
       "Haha, nope."
     ],
     "next": [

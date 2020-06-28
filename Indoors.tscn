@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Indoors.tres" type="TileSet" id=2]
@@ -9,7 +9,7 @@
 [ext_resource path="res://Frank/Frank.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Microwave.tscn" type="PackedScene" id=8]
 [ext_resource path="res://doll_party_ambience_reverb.ogg" type="AudioStream" id=9]
-[ext_resource path="res://HUD.tscn" type="PackedScene" id=10]
+[ext_resource path="res://fonts/m5x7.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://Lee/Lee.tscn" type="PackedScene" id=11]
 [ext_resource path="res://image0.png" type="Texture" id=12]
 [ext_resource path="res://Mary/Mary.tscn" type="PackedScene" id=13]
@@ -23,6 +23,15 @@
 [ext_resource path="res://Banner.png" type="Texture" id=21]
 [ext_resource path="res://Main Door.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Main Door.gd" type="Script" id=23]
+[ext_resource path="res://CanvasLayer.gd" type="Script" id=24]
+[ext_resource path="res://Drawer.gd" type="Script" id=25]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 12.5976, 12.2011 )
 
 [node name="Indoors" type="Node2D"]
 __meta__ = {
@@ -80,11 +89,10 @@ position = Vector2( 142.486, 54.2141 )
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
+autoplay = true
 
 [node name="Microwave" parent="." instance=ExtResource( 8 )]
 position = Vector2( 362.832, 42.5204 )
-
-[node name="HUD" parent="." instance=ExtResource( 10 )]
 
 [node name="Mary" parent="." instance=ExtResource( 13 )]
 position = Vector2( 167.481, 54.0177 )
@@ -128,3 +136,29 @@ script = ExtResource( 23 )
 
 [node name="DoorPosition" type="Position2D" parent="."]
 position = Vector2( 32.9366, 59.3342 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource( 24 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+visible = false
+margin_left = 149.122
+margin_top = 85.8086
+margin_right = 189.122
+margin_bottom = 125.809
+custom_fonts/normal_font = SubResource( 1 )
+text = "You died"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="CanvasLayer"]
+wait_time = 4.0
+
+[node name="Drawer" type="StaticBody2D" parent="."]
+script = ExtResource( 25 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Drawer"]
+position = Vector2( 79.9635, 206.872 )
+shape = SubResource( 2 )
+[connection signal="timeout" from="CanvasLayer/Timer" to="CanvasLayer" method="_on_Timer_timeout"]

@@ -37,8 +37,7 @@
       "branch_1"
     ]
   },
-  "branch_1":
-  {
+  "branch_1": {
     "type": "question",
     "text": "No one wants to spend time with me, so I figured I’d just sit here and play this two player game on my own.",
     "options": [
@@ -50,8 +49,7 @@
       ""
     ]
   },
-  "branch_2":
-  {
+  "branch_2": {
     "type": "question",
     "text": "I guess you’re right, but I still doubt anyone would play this game with me.",
     "options": [
@@ -61,13 +59,12 @@
       ""
     ]
   },
-  "branch_2_with_hana":
-  {
+  "branch_2_with_hana": {
     "type": "question",
     "text": "I guess you’re right, but I still doubt anyone would play this game with me.",
     "options": [
       "I certainly wouldn’t!",
-      "Maybe Hana would play with you? "
+      "Maybe Hana would play with you? She was sulking upstairs."
     ],
     "next": [
       "",
@@ -82,14 +79,12 @@
     "true": "branch_2_with_hana",
     "false": "branch_2"
   },
-  "branch_3": 
-  {
+  "branch_3": {
     "type": "text",
     "content": "I’d love to!",
     "next": "branch_4"
   },
-  "branch_4":
-  {
+  "branch_4": {
     "type": "text",
     "content": "Awesome! Thanks for finding me a player two. Go enjoy your party while we save the princess. Oh, before you go, I found this epi-pen sitting on the couch.",
     "next": "set_epipen_flag"
