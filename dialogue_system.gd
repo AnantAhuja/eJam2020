@@ -12,7 +12,7 @@ extends CanvasLayer
 ##### SETUP #####
 ## Paths ##
 var dialogues_folder = 'res://dialogues' # Folder where the JSON files will be stored
-var choice_scene = load('res://Choice.tscn') # Base scene for que choices
+var choice_scene = preload('res://Choice.tscn') # Base scene for que choices
 ## Required nodes ##
 onready var frame : Node = $Frame # The container node for the dialogues.
 onready var label : Node = $Frame/RichTextLabel # The label where the text will be displayed.
