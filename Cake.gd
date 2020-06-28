@@ -8,4 +8,9 @@ func _ready():
 
 func interact():
 	dialogue.initiate('cake')
-	
+	if progress.variables['has_epipen']:
+		# Alive
+		pass
+	else:
+		# Death scene
+		pass

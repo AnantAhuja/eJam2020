@@ -1,0 +1,88 @@
+﻿{
+  "first": {
+    "type": "divert",
+    "condition": "boolean",
+    "dictionary": "variables",
+    "variable": "first_loop",
+    "true": "post_loop_1",
+    "false": "set_end_flag"
+  },
+  "post_loop_1": {
+    "type": "question",
+    "text": "Hey birthday girl! How’s the party going for you so far?",
+    "options": [
+      "It’s going great! I can’t believe you planned this all for me, you’re the best.",
+      "You’re terrible at planning parties, I think I’ll just plan my own next time…",
+      "Hey, Mary, I think I’m stuck in a time loop…"
+    ],
+    "next": [
+      "branch_1",
+      "",
+      "post_loop_2"
+    ]
+  },
+  "post_loop_2": {
+    "type": "text",
+    "content": "That’s hilarious! You should do stand up comedy!"
+  },
+  "second": {
+    "type": "question",
+    "text": "Hey birthday girl! How’s the party going for you so far?",
+    "options": [
+      "It’s going great! I can’t believe you planned this all for me, you’re the best.",
+      "You’re terrible at planning parties, I think I’ll just plan my own next time…"
+    ],
+    "next": [
+      "branch_1",
+      ""
+    ]
+  },
+  "branch_1":
+  {
+    "type": "question",
+    "text": "I’d do anything for you, you know that!",
+    "options": [
+      "You’re hopeless. Get a life.",
+      "And I’d do anything for you, Mary."
+    ],
+    "next": [
+      "",
+      "branch_2"
+    ]
+  },
+  "branch_2":
+  {
+    "type": "question",
+    "text": "There’s actually something you could do for me right now, if you don’t mind. I bought you some cake that I think you’ll love, it’s sitting on the table over there! Want a bite?",
+    "options": [
+      "Is it vegan? Dairy free? Gluten free? I have to keep my body clean… unlike yours…",
+      "Sure! Let’s go have some!"
+    ],
+    "next": [
+      "branch_3",
+      "set_end_flag"
+    ]
+  },
+  "branch_3":
+  {
+    "type": "text",
+    "content": "Uhh, no, it’s not.",
+    "next": "branch_4"
+  },
+  "branch_4":
+  {
+    "type": "text",
+    "content": "Then I don’t want it."
+  },
+  "set_end_flag": {
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "value": [
+      [
+        "talked_to_mary",
+        true
+      ]
+    ]
+  }
+}

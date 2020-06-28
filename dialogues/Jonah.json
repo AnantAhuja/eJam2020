@@ -6,37 +6,27 @@
     "variable": "first_loop",
     "true": "post_loop_1",
     "false": "second"
-  },
-  "post_loop_1": {
-    "type": "text",
-    "content": "Hey, Jonah, I think I'm stuck in a time loop…",
-    "next": "post_loop_2"
-  },
-  "post_loop_2": {
-    "type": "text",
-    "content": "How much of that punch did you have?",
-    "next": "second2"
-  },
-  "second": {
+  },"post_loop_1": {
     "type": "question",
     "text": "I'm surprised you're talking to me. Are you sure you wouldn't rather be talking to Mary or Zira?",
     "options": [
       "You know what? You're right.",
-      "I know we aren't on the best of terms anymore Jonah, but I want everyone to have a good time tonight"
+      "I know we aren't on the best of terms anymore Jonah, but I want everyone to have a good time tonight",
+      "Hey, Jonah, I think I'm stuck in a time loop…"
     ],
     "next": [
       "",
-      "chose_option_2"
+      "chose_option_2",
+      "post_loop_2"
     ]
   },
-  "second2": {
+  "post_loop_2": {
     "type": "text",
-    "content": "...",
-    "next": "second3"
+    "content": "How much of that punch did you have?",
   },
-  "second3": {
+  "second": {
     "type": "question",
-    "text": "I'm still surprised you're talking to me. Are you sure you wouldn't rather be talking to Mary or Zira?",
+    "text": "I'm surprised you're talking to me. Are you sure you wouldn't rather be talking to Mary or Zira?",
     "options": [
       "You know what? You're right.",
       "I know we aren't on the best of terms anymore Jonah, but I want everyone to have a good time tonight"

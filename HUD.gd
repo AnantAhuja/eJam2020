@@ -10,9 +10,6 @@ func _on_StartButton_pressed():
 	$StartButton.hide()
 	$MessageLabel.hide()
 	
-	# Hide credits button
-	$CreditsButton.hide()
-		
 	# Start the game
 	$'../Music'.play()
 

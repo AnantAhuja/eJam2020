@@ -1,0 +1,77 @@
+﻿{
+  "first": {
+    "type": "divert",
+    "condition": "boolean",
+    "dictionary": "variables",
+    "variable": "first_loop",
+    "true": "post_loop_1",
+    "false": "second"
+  },
+  "post_loop_1": {
+    "type": "question",
+    "text": "Oh… h-h-hi. Happy birthday.",
+    "options": [
+      "Get out of my way Hana.",
+      "Why are you sitting all alone?",
+      "Hey, Hana, I think I’m stuck in a time loop…"
+    ],
+    "next": [
+      "",
+      "branch_1",
+      "post_loop_1"
+    ]
+  },
+  "post_loop_2": {
+    "type": "text",
+    "content": "I don’t appreciate you pulling pranks on me."
+  },
+  "second": {
+    "type": "question",
+    "text": "Oh… h-h-hi. Happy birthday.",
+    "options": [
+      "Get out of my way Hana.",
+      "Why are you sitting all alone?"
+    ],
+    "next": [
+      "",
+      "branch_1"
+    ]
+  },
+  "branch_1":
+  {
+    "type": "question",
+    "text": "I wanted to be alone. I-I-I’m alright. Don’t worry about me.",
+    "options": [
+      "Ok. I won’t.",
+      "Are you sure? Maybe we could spend some time together?"
+    ],
+    "next": [
+      "",
+      "branch_2"
+    ]
+  },
+  "branch_2":
+  {
+    "type": "question",
+    "text": "Really?",
+    "options": [
+      "Sure, come along with me for a while!",
+      "Haha, nope."
+    ],
+    "next": [
+      "set_follow_flag",
+      ""
+    ]
+  },
+  "set_follow_flag": {
+    "type": "action",
+    "operation": "variable",
+    "dictionary": "variables",
+    "value": [
+      [
+        "is_hana_following",
+        true
+      ]
+    ]
+  }
+}

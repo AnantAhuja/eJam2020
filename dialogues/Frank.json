@@ -8,9 +8,18 @@
     "false": "second"
   },
   "post_loop_1": {
-    "type": "text",
-    "content": "Hey, Frank, I think I’m stuck in a time loop…",
-    "next": "post_loop_2"
+    "type": "question",
+    "text": "Nice party you have here…",
+    "options": [
+      "It'd be nicer if you weren't here.",
+      "Thanks, I'm glad you could come.",
+      "Hey, Frank, I think I’m stuck in a time loop…"
+    ],
+    "next": [
+      "",
+      "branch_1",
+      "post_loop_2"
+    ]
   },
   "post_loop_2": {
     "type": "text",
@@ -20,18 +29,6 @@
   "second": {
     "type": "question",
     "text": "Nice party you have here…",
-    "options": [
-      "It'd be nicer if you weren't here.",
-      "Thanks, I'm glad you could come."
-    ],
-    "next": [
-      "",
-      "branch_1"
-    ]
-  },
-  "second2": {
-    "type": "question",
-    "text": "Anyways, nice party you have here.",
     "options": [
       "It'd be nicer if you weren't here.",
       "Thanks, I'm glad you could come."
@@ -133,8 +130,7 @@
         "has_body_spray",
         true
       ]
-    ],
-    "next": "second2"
+    ]
   },
   "final ": {
     "type": "text",

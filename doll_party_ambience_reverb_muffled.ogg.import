@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/doll_party_ambience_reverb_muffled.ogg-42380f0fbb5c6545d2347aab6734357a.oggstr"
+
+[deps]
+
+source_file="res://doll_party_ambience_reverb_muffled.ogg"
+dest_files=[ "res://.import/doll_party_ambience_reverb_muffled.ogg-42380f0fbb5c6545d2347aab6734357a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

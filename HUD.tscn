@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://HUD.gd" type="Script" id=1]
-[ext_resource path="res://subpixel-a/subpixel-a.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://fonts/m5x7.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="DynamicFont" id=1]
@@ -11,14 +10,6 @@ font_data = ExtResource( 3 )
 [sub_resource type="DynamicFont" id=2]
 size = 64
 font_data = ExtResource( 3 )
-
-[sub_resource type="DynamicFont" id=3]
-size = 64
-font_data = ExtResource( 2 )
-
-[sub_resource type="DynamicFont" id=4]
-size = 64
-font_data = ExtResource( 2 )
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -42,52 +33,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ColorRect" type="ColorRect" parent="MessageLabel"]
+show_behind_parent = true
+margin_top = -120.0
+margin_right = 320.0
+margin_bottom = 61.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="StartButton" type="Button" parent="."]
 modulate = Color( 1, 0.917647, 0.929412, 1 )
 self_modulate = Color( 1, 0.917647, 0.929412, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = SubResource( 2 )
-text = "Looped"
+text = "Loopday"
 flat = true
-__meta__ = {
-"_edit_lock_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="CreditsButton" type="Button" parent="."]
-visible = false
-modulate = Color( 1, 0.917647, 0.929412, 1 )
-self_modulate = Color( 1, 0.917647, 0.929412, 1 )
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -465.0
-margin_right = -39.0
-margin_bottom = 136.0
-custom_fonts/font = SubResource( 3 )
-text = "Credits"
-flat = true
-expand_icon = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Credits" type="Label" parent="."]
-visible = false
-modulate = Color( 1, 0.917647, 0.929412, 1 )
-self_modulate = Color( 1, 0.917647, 0.929412, 1 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = SubResource( 4 )
-text = "Game by Anant Ahuja
-
-Music by Eric Matyas
-www.soundimage.org"
-align = 1
-valign = 1
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
-[connection signal="pressed" from="CreditsButton" to="." method="_on_CreditsButton_pressed"]
